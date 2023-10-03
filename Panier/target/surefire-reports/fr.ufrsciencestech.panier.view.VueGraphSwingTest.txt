@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: fr.ufrsciencestech.panier.view.VueGraphSwingTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 7, Errors: 1, Skipped: 0, Time elapsed: 0.301 s <<< FAILURE! - in fr.ufrsciencestech.panier.view.VueGraphSwingTest
+testAddControleur(fr.ufrsciencestech.panier.view.VueGraphSwingTest)  Time elapsed: 0.136 s  <<< FAILURE!
+java.lang.AssertionError: The test case is a prototype.
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testAddControleur(VueGraphSwingTest.java:53)
+
+testGetAffiche(fr.ufrsciencestech.panier.view.VueGraphSwingTest)  Time elapsed: 0.027 s  <<< FAILURE!
+java.lang.AssertionError: expected:<null> but was:<javax.swing.JLabel[Affichage,0,27,41x17,alignmentX=0.0,alignmentY=0.0,border=,flags=8388608,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,horizontalAlignment=CENTER,horizontalTextPosition=TRAILING,iconTextGap=4,labelFor=,text=0,verticalAlignment=CENTER,verticalTextPosition=CENTER]>
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testGetAffiche(VueGraphSwingTest.java:132)
+
+testPropertyChange(fr.ufrsciencestech.panier.view.VueGraphSwingTest)  Time elapsed: 0.043 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "java.beans.PropertyChangeEvent.getSource()" because "evt" is null
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testPropertyChange(VueGraphSwingTest.java:64)
+
+testSetAffiche(fr.ufrsciencestech.panier.view.VueGraphSwingTest)  Time elapsed: 0.041 s  <<< FAILURE!
+java.lang.AssertionError: The test case is a prototype.
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testSetAffiche(VueGraphSwingTest.java:147)
+
+testGetDec(fr.ufrsciencestech.panier.view.VueGraphSwingTest)  Time elapsed: 0.015 s  <<< FAILURE!
+java.lang.AssertionError: expected:<null> but was:<javax.swing.JButton[Moins,0,44,41x27,alignmentX=0.0,alignmentY=0.5,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@229d10bd,flags=296,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=javax.swing.plaf.InsetsUIResource[top=2,left=14,bottom=2,right=14],paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=true,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=-,defaultCapable=true]>
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testGetDec(VueGraphSwingTest.java:105)
+
+testGetInc(fr.ufrsciencestech.panier.view.VueGraphSwingTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<null> but was:<javax.swing.JButton[Plus,0,0,41x27,alignmentX=0.0,alignmentY=0.5,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@229d10bd,flags=296,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=javax.swing.plaf.InsetsUIResource[top=2,left=14,bottom=2,right=14],paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=true,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=+,defaultCapable=true]>
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testGetInc(VueGraphSwingTest.java:78)
+
+testSetDec(fr.ufrsciencestech.panier.view.VueGraphSwingTest)  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.AssertionError: The test case is a prototype.
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testSetDec(VueGraphSwingTest.java:120)
+
+testSetInc(fr.ufrsciencestech.panier.view.VueGraphSwingTest)  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.AssertionError: The test case is a prototype.
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testSetInc(VueGraphSwingTest.java:93)
+

@@ -1,0 +1,68 @@
+-------------------------------------------------------------------------------
+Test set: fr.ufrsciencestech.panier.model.PanierTest
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 0, Errors: 16, Skipped: 0, Time elapsed: 0.039 s <<< FAILURE! - in fr.ufrsciencestech.panier.model.PanierTest
+testBoycotteOrigine(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.boycotteOrigine(String)" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testBoycotteOrigine(PanierTest.java:226)
+
+testEstVide(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.estVide()" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testEstVide(PanierTest.java:184)
+
+testGetFruit(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.getFruit(int)" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testGetFruit(PanierTest.java:119)
+
+testGetContenanceMax(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.getContenanceMax()" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testGetContenanceMax(PanierTest.java:104)
+
+testAddObserver(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.addObserver(java.beans.PropertyChangeListener)" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testAddObserver(PanierTest.java:254)
+
+testEstPlein(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.estPlein()" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testEstPlein(PanierTest.java:198)
+
+testToString(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.toString()" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testToString(PanierTest.java:49)
+
+testAjout_0args(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.ajout()" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testAjout_0args(PanierTest.java:145)
+
+testAjout_Fruit(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.ajout(fr.ufrsciencestech.panier.model.Fruit)" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testAjout_Fruit(PanierTest.java:133)
+
+testGetPrix(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.getPrix()" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testGetPrix(PanierTest.java:212)
+
+testRetrait(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.retrait()" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testRetrait(PanierTest.java:157)
+
+testSetFruits(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.setFruits(java.util.ArrayList)" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testSetFruits(PanierTest.java:77)
+
+testGetTaillePanier(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.getTaillePanier()" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testGetTaillePanier(PanierTest.java:90)
+
+testGetFruits(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.getFruits()" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testGetFruits(PanierTest.java:63)
+
+testEquals(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.equals(Object)" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testEquals(PanierTest.java:240)
+
+testSetFruit(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "fr.ufrsciencestech.panier.model.Panier.setFruit(int, fr.ufrsciencestech.panier.model.Fruit)" because "instance" is null
+	at fr.ufrsciencestech.panier.model.PanierTest.testSetFruit(PanierTest.java:171)
+

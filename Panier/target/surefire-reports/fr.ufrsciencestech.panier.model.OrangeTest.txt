@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: fr.ufrsciencestech.panier.model.OrangeTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in fr.ufrsciencestech.panier.model.OrangeTest
+testToString(fr.ufrsciencestech.panier.model.OrangeTest)  Time elapsed: 0 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[]> but was:<[Orange de Espagne a 0.5 euros]>
+	at fr.ufrsciencestech.panier.model.OrangeTest.testToString(OrangeTest.java:102)
+
+testGetOrigine(fr.ufrsciencestech.panier.model.OrangeTest)  Time elapsed: 0 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[]> but was:<[Espagne]>
+	at fr.ufrsciencestech.panier.model.OrangeTest.testGetOrigine(OrangeTest.java:75)
+
+testIsSeedless(fr.ufrsciencestech.panier.model.OrangeTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: The test case is a prototype.
+	at fr.ufrsciencestech.panier.model.OrangeTest.testIsSeedless(OrangeTest.java:133)
+
+testGetPrix(fr.ufrsciencestech.panier.model.OrangeTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: expected:<0.0> but was:<0.5>
+	at fr.ufrsciencestech.panier.model.OrangeTest.testGetPrix(OrangeTest.java:48)
+
+testSetOrigine(fr.ufrsciencestech.panier.model.OrangeTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: The test case is a prototype.
+	at fr.ufrsciencestech.panier.model.OrangeTest.testSetOrigine(OrangeTest.java:90)
+
+testEquals(fr.ufrsciencestech.panier.model.OrangeTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: The test case is a prototype.
+	at fr.ufrsciencestech.panier.model.OrangeTest.testEquals(OrangeTest.java:119)
+
+testSetPrix(fr.ufrsciencestech.panier.model.OrangeTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: The test case is a prototype.
+	at fr.ufrsciencestech.panier.model.OrangeTest.testSetPrix(OrangeTest.java:63)
+

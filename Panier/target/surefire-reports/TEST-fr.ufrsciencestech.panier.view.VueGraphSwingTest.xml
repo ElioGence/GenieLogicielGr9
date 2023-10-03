@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="fr.ufrsciencestech.panier.view.VueGraphSwingTest" time="0.301" tests="8" errors="1" skipped="0" failures="7">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/test-classes:/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/classes:/home1/eg425368/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home1/eg425368/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home1/eg425368/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar:/home1/eg425368/.m2/repository/org/springframework/spring-context/5.1.9.RELEASE/spring-context-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-aop/5.1.9.RELEASE/spring-aop-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-beans/5.1.9.RELEASE/spring-beans-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-core/5.1.9.RELEASE/spring-core-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-jcl/5.1.9.RELEASE/spring-jcl-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-expression/5.1.9.RELEASE/spring-expression-5.1.9.RELEASE.jar:"/>
+    <property name="java.vm.vendor" value="Debian"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://tracker.debian.org/openjdk-17"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/surefire/surefirebooter17237781945088973485.jar /home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/surefire 2023-09-28T17-29-10_192-jvmRun1 surefire5569186588227055561tmp surefire_09356290721812632301tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="fr.ufrsciencestech.panier.view.VueGraphSwingTest"/>
+    <property name="surefire.test.class.path" value="/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/test-classes:/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/classes:/home1/eg425368/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home1/eg425368/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home1/eg425368/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar:/home1/eg425368/.m2/repository/org/springframework/spring-context/5.1.9.RELEASE/spring-context-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-aop/5.1.9.RELEASE/spring-aop-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-beans/5.1.9.RELEASE/spring-beans-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-core/5.1.9.RELEASE/spring-core-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-jcl/5.1.9.RELEASE/spring-jcl-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-expression/5.1.9.RELEASE/spring-expression-5.1.9.RELEASE.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home1/eg425368"/>
+    <property name="user.language" value="fr"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/surefire/surefirebooter17237781945088973485.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.8+7-Debian-1deb12u1"/>
+    <property name="user.name" value="eg425368"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.1.0-12-amd64"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="maven.ext.class.path" value="/usr/gide/netbeans-14/java/maven-nblib/netbeans-eventspy.jar"/>
+    <property name="localRepository" value="/home1/eg425368/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.debian.org/openjdk-17"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.8"/>
+    <property name="user.dir" value="/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Debian"/>
+    <property name="java.vm.version" value="17.0.8+7-Debian-1deb12u1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testAddControleur" classname="fr.ufrsciencestech.panier.view.VueGraphSwingTest" time="0.136">
+    <failure message="The test case is a prototype." type="java.lang.AssertionError">java.lang.AssertionError: The test case is a prototype.
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testAddControleur(VueGraphSwingTest.java:53)
+</failure>
+    <system-out><![CDATA[addControleur
+]]></system-out>
+  </testcase>
+  <testcase name="testGetAffiche" classname="fr.ufrsciencestech.panier.view.VueGraphSwingTest" time="0.027">
+    <failure message="expected:&lt;null&gt; but was:&lt;javax.swing.JLabel[Affichage,0,27,41x17,alignmentX=0.0,alignmentY=0.0,border=,flags=8388608,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,horizontalAlignment=CENTER,horizontalTextPosition=TRAILING,iconTextGap=4,labelFor=,text=0,verticalAlignment=CENTER,verticalTextPosition=CENTER]&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<null> but was:<javax.swing.JLabel[Affichage,0,27,41x17,alignmentX=0.0,alignmentY=0.0,border=,flags=8388608,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,horizontalAlignment=CENTER,horizontalTextPosition=TRAILING,iconTextGap=4,labelFor=,text=0,verticalAlignment=CENTER,verticalTextPosition=CENTER]>
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testGetAffiche(VueGraphSwingTest.java:132)
+]]></failure>
+    <system-out><![CDATA[getAffiche
+]]></system-out>
+  </testcase>
+  <testcase name="testPropertyChange" classname="fr.ufrsciencestech.panier.view.VueGraphSwingTest" time="0.043">
+    <error message="Cannot invoke &quot;java.beans.PropertyChangeEvent.getSource()&quot; because &quot;evt&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke "java.beans.PropertyChangeEvent.getSource()" because "evt" is null
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testPropertyChange(VueGraphSwingTest.java:64)
+</error>
+    <system-out><![CDATA[propertyChange
+]]></system-out>
+  </testcase>
+  <testcase name="testSetAffiche" classname="fr.ufrsciencestech.panier.view.VueGraphSwingTest" time="0.041">
+    <failure message="The test case is a prototype." type="java.lang.AssertionError">java.lang.AssertionError: The test case is a prototype.
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testSetAffiche(VueGraphSwingTest.java:147)
+</failure>
+    <system-out><![CDATA[setAffiche
+]]></system-out>
+  </testcase>
+  <testcase name="testGetDec" classname="fr.ufrsciencestech.panier.view.VueGraphSwingTest" time="0.015">
+    <failure message="expected:&lt;null&gt; but was:&lt;javax.swing.JButton[Moins,0,44,41x27,alignmentX=0.0,alignmentY=0.5,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@229d10bd,flags=296,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=javax.swing.plaf.InsetsUIResource[top=2,left=14,bottom=2,right=14],paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=true,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=-,defaultCapable=true]&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<null> but was:<javax.swing.JButton[Moins,0,44,41x27,alignmentX=0.0,alignmentY=0.5,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@229d10bd,flags=296,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=javax.swing.plaf.InsetsUIResource[top=2,left=14,bottom=2,right=14],paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=true,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=-,defaultCapable=true]>
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testGetDec(VueGraphSwingTest.java:105)
+]]></failure>
+    <system-out><![CDATA[getDec
+]]></system-out>
+  </testcase>
+  <testcase name="testGetInc" classname="fr.ufrsciencestech.panier.view.VueGraphSwingTest" time="0.002">
+    <failure message="expected:&lt;null&gt; but was:&lt;javax.swing.JButton[Plus,0,0,41x27,alignmentX=0.0,alignmentY=0.5,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@229d10bd,flags=296,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=javax.swing.plaf.InsetsUIResource[top=2,left=14,bottom=2,right=14],paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=true,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=+,defaultCapable=true]&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<null> but was:<javax.swing.JButton[Plus,0,0,41x27,alignmentX=0.0,alignmentY=0.5,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@229d10bd,flags=296,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=javax.swing.plaf.InsetsUIResource[top=2,left=14,bottom=2,right=14],paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=true,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=+,defaultCapable=true]>
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testGetInc(VueGraphSwingTest.java:78)
+]]></failure>
+    <system-out><![CDATA[getInc
+]]></system-out>
+  </testcase>
+  <testcase name="testSetDec" classname="fr.ufrsciencestech.panier.view.VueGraphSwingTest" time="0.004">
+    <failure message="The test case is a prototype." type="java.lang.AssertionError">java.lang.AssertionError: The test case is a prototype.
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testSetDec(VueGraphSwingTest.java:120)
+</failure>
+    <system-out><![CDATA[setDec
+]]></system-out>
+  </testcase>
+  <testcase name="testSetInc" classname="fr.ufrsciencestech.panier.view.VueGraphSwingTest" time="0.004">
+    <failure message="The test case is a prototype." type="java.lang.AssertionError">java.lang.AssertionError: The test case is a prototype.
+	at fr.ufrsciencestech.panier.view.VueGraphSwingTest.testSetInc(VueGraphSwingTest.java:93)
+</failure>
+    <system-out><![CDATA[setInc
+]]></system-out>
+  </testcase>
+</testsuite>
