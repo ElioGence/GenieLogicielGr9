@@ -1,6 +1,6 @@
 package fr.ufrsciencestech.panier.model;
 
-public interface Fruit {
+public interface Fruit extends ElementPanier {
     public boolean isSeedless();  //predicat indiquant si le fruit a ou non des pepins
     public double getPrix();      //prix unitaire du fruit (en euros)
     public String getOrigine();   //pays d'origine du fruit
