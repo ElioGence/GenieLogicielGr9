@@ -39,11 +39,16 @@ public class Panier {
     else
       return null;
   }
-  public void ajout(ElementPanier o) throws PanierPleinException {
-    if (elements.size() < contenanceMax)
-      elements.add(o);
-    else
+  public void ajout(ElementPanier o) throws PanierPleinException, PanierElementPresentException {
+    if (elements.size() < contenanceMax) {
+      if (!elements.contains(o)) {
+        elements.add(o);
+      } else {
+        throw new PanierElementPresentException();
+      }
+    } else {
       throw new PanierPleinException();
+    }
   }
   public void setelement(int i, ElementPanier f) {
     if (i < elements.size())
