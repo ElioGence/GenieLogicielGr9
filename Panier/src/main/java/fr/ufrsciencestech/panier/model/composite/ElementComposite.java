@@ -24,6 +24,13 @@ public class ElementComposite implements ElementPanier {
     }
     return prix;
   }
+  public double getPoids() {
+    double poids = 0;
+    for (Fruit f : fruits) {
+      poids += f.getPoids();
+    }
+    return poids;
+  }
   public Fruit[] getFruits() {
     return fruits;
   }
