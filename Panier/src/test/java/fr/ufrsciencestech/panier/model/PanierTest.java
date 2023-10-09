@@ -11,6 +11,9 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import fr.ufrsciencestech.panier.model.fruit.Fruit;
+
 import static org.junit.Assert.*;
 
 /**

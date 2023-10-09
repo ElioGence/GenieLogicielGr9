@@ -1,11 +1,7 @@
 package fr.ufrsciencestech.panier.model;
 
-
-public class PanierPleinException extends Exception {
-    
-    public PanierPleinException()
-    {
-	super("Ajout impossible car le panier est plein !");
-    }
-
+public class PanierPleinException extends RuntimeException {
+  public PanierPleinException() {
+    super("Ajout impossible car le panier est plein !");
+  }
 }
