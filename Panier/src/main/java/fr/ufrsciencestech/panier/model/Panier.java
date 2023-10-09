@@ -73,9 +73,9 @@ public class Panier {
     }
     return prix;
   }
-  public void boycotteOrigine(String origine) {
+  public void boycotteOrigine(String origine) { // on suppose que l'on spécifie une seule origine
     for (int i = elements.size() - 1; i >= 0; --i) {
-      if (elements.get(i).getOrigine().equals(origine)) {
+      if (elements.get(i).getOrigine().matches(origine)) {
         elements.remove(i);
       }
     }
