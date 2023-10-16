@@ -5,11 +5,11 @@ import java.beans.PropertyChangeSupport;
 import java.util.*;
 
 public class Panier {
-  private ArrayList<ElementPanier> elements;
+  public ArrayList<ElementPANIER> elements;
   private int contenanceMax;
   PropertyChangeSupport pcs = new PropertyChangeSupport(this);
   public Panier(int contenanceMax) {
-    this.elements = new ArrayList<ElementPanier>();
+    this.elements = new ArrayList<ElementPANIER>();
     this.contenanceMax = contenanceMax;
   }
   @Override
@@ -21,10 +21,10 @@ public class Panier {
     }
     return res;
   }
-  public ArrayList<ElementPanier> getelements() {
+  public ArrayList<ElementPANIER> getelements() {
     return this.elements;
   }
-  public void setelements(ArrayList<ElementPanier> elements) {
+  public void setelements(ArrayList<ElementPANIER> elements) {
     this.elements = elements;
   }
   public int getTaillePanier() {
@@ -33,13 +33,13 @@ public class Panier {
   public int getContenanceMax() {
     return this.contenanceMax;
   }
-  public ElementPanier getelement(int i) {
+  public ElementPANIER getelement(int i) {
     if (i < elements.size())
       return elements.get(i);
     else
       return null;
   }
-  public void ajout(ElementPanier o) throws PanierPleinException, PanierElementPresentException {
+  public void ajout(ElementPANIER o) throws PanierPleinException, PanierElementPresentException {
     if (elements.size() < contenanceMax) {
       if (!elements.contains(o)) {
         elements.add(o);
@@ -50,7 +50,7 @@ public class Panier {
       throw new PanierPleinException();
     }
   }
-  public void setelement(int i, ElementPanier f) {
+  public void setelement(int i, ElementPANIER f) {
     if (i < elements.size())
       elements.set(i, f);
   }
