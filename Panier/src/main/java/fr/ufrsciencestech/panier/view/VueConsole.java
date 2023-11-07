@@ -13,11 +13,11 @@ import java.beans.PropertyChangeListener;
  * @author eg425368
  */
 public class VueConsole implements PropertyChangeListener {
-    
+
     private String trace;
 
     public VueConsole() {
-       
+
     }
 
     public String getTrace() {
@@ -31,9 +31,7 @@ public class VueConsole implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         Panier p = (Panier) evt.getSource();
-        System.out.println(((Integer)p.getTaillePanier()).toString());
+        System.out.println(((Integer) p.getTaillePanier()).toString());
     }
-    
 
-    
 }

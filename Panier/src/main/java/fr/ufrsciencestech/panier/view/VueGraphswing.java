@@ -18,12 +18,12 @@ import javax.swing.JTextArea;
  *
  * @author im796713
  */
-public class VUEGraphswing extends JFrame implements VUEG {
+public class VueGraphswing extends JFrame implements VueG {
     private javax.swing.JButton jButtonPLUS;
     private javax.swing.JButton jButtonMinus;
     private javax.swing.JTextArea jTextInfos;
     private javax.swing.JComboBox jComboFruit;
-    public VUEGraphswing(){
+    public VueGraphswing(){
         super ("Panier Fruits");
        
         this.addWindowListener(new WindowAdapter(){
