@@ -1,104 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="fr.ufrsciencestech.panier.model.OrangeTest" time="0.001" tests="7" errors="0" skipped="0" failures="7">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="fr.ufrsciencestech.panier.model.OrangeTest" time="0.039" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/test-classes:/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/classes:/home1/eg425368/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home1/eg425368/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home1/eg425368/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar:/home1/eg425368/.m2/repository/org/springframework/spring-context/5.1.9.RELEASE/spring-context-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-aop/5.1.9.RELEASE/spring-aop-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-beans/5.1.9.RELEASE/spring-beans-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-core/5.1.9.RELEASE/spring-core-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-jcl/5.1.9.RELEASE/spring-jcl-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-expression/5.1.9.RELEASE/spring-expression-5.1.9.RELEASE.jar:"/>
-    <property name="java.vm.vendor" value="Debian"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Rauhnos\Documents\Cours\M1\GénieLogiciel\Projet\Gr9\Panier\target\test-classes;C:\Users\Rauhnos\Documents\Cours\M1\GénieLogiciel\Projet\Gr9\Panier\target\classes;C:\Users\Rauhnos\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Rauhnos\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Rauhnos\.m2\repository\org\mockito\mockito-all\1.10.19\mockito-all-1.10.19.jar;C:\Users\Rauhnos\.m2\repository\org\springframework\spring-context\5.1.9.RELEASE\spring-context-5.1.9.RELEASE.jar;C:\Users\Rauhnos\.m2\repository\org\springframework\spring-aop\5.1.9.RELEASE\spring-aop-5.1.9.RELEASE.jar;C:\Users\Rauhnos\.m2\repository\org\springframework\spring-beans\5.1.9.RELEASE\spring-beans-5.1.9.RELEASE.jar;C:\Users\Rauhnos\.m2\repository\org\springframework\spring-core\5.1.9.RELEASE\spring-core-5.1.9.RELEASE.jar;C:\Users\Rauhnos\.m2\repository\org\springframework\spring-jcl\5.1.9.RELEASE\spring-jcl-5.1.9.RELEASE.jar;C:\Users\Rauhnos\.m2\repository\org\springframework\spring-expression\5.1.9.RELEASE\spring-expression-5.1.9.RELEASE.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.vendor.url" value="https://tracker.debian.org/openjdk-17"/>
-    <property name="os.name" value="Linux"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="os.name" value="Windows 10"/>
     <property name="java.vm.specification.version" value="17"/>
-    <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
-    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/surefire/surefirebooter12301275813352446179.jar /home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/surefire 2023-09-28T17-28-36_105-jvmRun1 surefire941956057436950248tmp surefire_01604237042588272701tmp"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
+    <property name="sun.java.command" value="C:\Users\Rauhnos\AppData\Local\Temp\surefire5180290215053536974\surefirebooter5298771708849059449.jar C:\Users\Rauhnos\AppData\Local\Temp\surefire5180290215053536974 2023-11-08T23-28-37_019-jvmRun1 surefire15322268179258494172tmp surefire_014789080306315322964tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/test-classes:/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/classes:/home1/eg425368/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home1/eg425368/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home1/eg425368/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar:/home1/eg425368/.m2/repository/org/springframework/spring-context/5.1.9.RELEASE/spring-context-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-aop/5.1.9.RELEASE/spring-aop-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-beans/5.1.9.RELEASE/spring-beans-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-core/5.1.9.RELEASE/spring-core-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-jcl/5.1.9.RELEASE/spring-jcl-5.1.9.RELEASE.jar:/home1/eg425368/.m2/repository/org/springframework/spring-expression/5.1.9.RELEASE/spring-expression-5.1.9.RELEASE.jar:"/>
+    <property name="test" value="fr.ufrsciencestech.panier.model.OrangeTest"/>
+    <property name="surefire.test.class.path" value="C:\Users\Rauhnos\Documents\Cours\M1\GénieLogiciel\Projet\Gr9\Panier\target\test-classes;C:\Users\Rauhnos\Documents\Cours\M1\GénieLogiciel\Projet\Gr9\Panier\target\classes;C:\Users\Rauhnos\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Rauhnos\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Rauhnos\.m2\repository\org\mockito\mockito-all\1.10.19\mockito-all-1.10.19.jar;C:\Users\Rauhnos\.m2\repository\org\springframework\spring-context\5.1.9.RELEASE\spring-context-5.1.9.RELEASE.jar;C:\Users\Rauhnos\.m2\repository\org\springframework\spring-aop\5.1.9.RELEASE\spring-aop-5.1.9.RELEASE.jar;C:\Users\Rauhnos\.m2\repository\org\springframework\spring-beans\5.1.9.RELEASE\spring-beans-5.1.9.RELEASE.jar;C:\Users\Rauhnos\.m2\repository\org\springframework\spring-core\5.1.9.RELEASE\spring-core-5.1.9.RELEASE.jar;C:\Users\Rauhnos\.m2\repository\org\springframework\spring-jcl\5.1.9.RELEASE\spring-jcl-5.1.9.RELEASE.jar;C:\Users\Rauhnos\.m2\repository\org\springframework\spring-expression\5.1.9.RELEASE\spring-expression-5.1.9.RELEASE.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/home1/eg425368"/>
+    <property name="user.home" value="C:\Users\Rauhnos"/>
     <property name="user.language" value="fr"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2023-07-18"/>
-    <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
-    <property name="file.separator" value="/"/>
-    <property name="basedir" value="/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-17"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Rauhnos\Documents\Cours\M1\GénieLogiciel\Projet\Gr9\Panier"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier/target/surefire/surefirebooter12301275813352446179.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Rauhnos\AppData\Local\Temp\surefire5180290215053536974\surefirebooter5298771708849059449.jar"/>
+    <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="17.0.8+7-Debian-1deb12u1"/>
-    <property name="user.name" value="eg425368"/>
-    <property name="path.separator" value=":"/>
-    <property name="os.version" value="6.1.0-12-amd64"/>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.runtime.version" value="17.0.8+9-LTS-211"/>
+    <property name="user.name" value="Rauhnos"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="maven.ext.class.path" value="/usr/gide/netbeans-14/java/maven-nblib/netbeans-eventspy.jar"/>
-    <property name="localRepository" value="/home1/eg425368/.m2/repository"/>
-    <property name="java.vendor.url.bug" value="https://bugs.debian.org/openjdk-17"/>
-    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-19\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="localRepository" value="C:\Users\Rauhnos\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Rauhnos\AppData\Local\Temp\"/>
     <property name="java.version" value="17.0.8"/>
-    <property name="user.dir" value="/home7/eg425368/Documents/M1/S1/GenieLogiciel/TP/TPGL_NB/TPGL/Panier"/>
+    <property name="user.dir" value="C:\Users\Rauhnos\Documents\Cours\M1\GénieLogiciel\Projet\Gr9\Panier"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="native.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Users\Rauhnos\AppData\Local\Microsoft\WindowsApps;C:\Users\Rauhnos\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Rauhnos\AppData\Local\GitHubDesktop\bin;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.vendor" value="Debian"/>
-    <property name="java.vm.version" value="17.0.8+7-Debian-1deb12u1"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.8+9-LTS-211"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testToString" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0">
-    <failure message="expected:&lt;[]&gt; but was:&lt;[Orange de Espagne a 0.5 euros]&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: expected:<[]> but was:<[Orange de Espagne a 0.5 euros]>
-	at fr.ufrsciencestech.panier.model.OrangeTest.testToString(OrangeTest.java:102)
-]]></failure>
-    <system-out><![CDATA[toString
-]]></system-out>
-  </testcase>
-  <testcase name="testGetOrigine" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0">
-    <failure message="expected:&lt;[]&gt; but was:&lt;[Espagne]&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: expected:<[]> but was:<[Espagne]>
-	at fr.ufrsciencestech.panier.model.OrangeTest.testGetOrigine(OrangeTest.java:75)
-]]></failure>
-    <system-out><![CDATA[getOrigine
-]]></system-out>
-  </testcase>
-  <testcase name="testIsSeedless" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0.001">
-    <failure message="The test case is a prototype." type="java.lang.AssertionError">java.lang.AssertionError: The test case is a prototype.
-	at fr.ufrsciencestech.panier.model.OrangeTest.testIsSeedless(OrangeTest.java:133)
-</failure>
-    <system-out><![CDATA[isSeedless
-]]></system-out>
-  </testcase>
-  <testcase name="testGetPrix" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0">
-    <failure message="expected:&lt;0.0&gt; but was:&lt;0.5&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<0.0> but was:<0.5>
-	at fr.ufrsciencestech.panier.model.OrangeTest.testGetPrix(OrangeTest.java:48)
-]]></failure>
-    <system-out><![CDATA[getPrix
-]]></system-out>
-  </testcase>
-  <testcase name="testSetOrigine" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0">
-    <failure message="The test case is a prototype." type="java.lang.AssertionError">java.lang.AssertionError: The test case is a prototype.
-	at fr.ufrsciencestech.panier.model.OrangeTest.testSetOrigine(OrangeTest.java:90)
-</failure>
-    <system-out><![CDATA[setOrigine
-]]></system-out>
-  </testcase>
-  <testcase name="testEquals" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0">
-    <failure message="The test case is a prototype." type="java.lang.AssertionError">java.lang.AssertionError: The test case is a prototype.
-	at fr.ufrsciencestech.panier.model.OrangeTest.testEquals(OrangeTest.java:119)
-</failure>
-    <system-out><![CDATA[equals
-]]></system-out>
-  </testcase>
-  <testcase name="testSetPrix" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0">
-    <failure message="The test case is a prototype." type="java.lang.AssertionError">java.lang.AssertionError: The test case is a prototype.
-	at fr.ufrsciencestech.panier.model.OrangeTest.testSetPrix(OrangeTest.java:63)
-</failure>
-    <system-out><![CDATA[setPrix
-]]></system-out>
-  </testcase>
+  <testcase name="testPrixOrigineParDéfaut" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0.004"/>
+  <testcase name="testSetOrigineNull" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0"/>
+  <testcase name="testName" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0"/>
+  <testcase name="testToString" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0"/>
+  <testcase name="testIsSeedless" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0"/>
+  <testcase name="testSetOrigineEmpty" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0"/>
+  <testcase name="testSetPrixNegative" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0"/>
+  <testcase name="testSetOrigine" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0.001"/>
+  <testcase name="testEquals" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0"/>
+  <testcase name="testSetPrix" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0"/>
+  <testcase name="testPrixOrigine" classname="fr.ufrsciencestech.panier.model.OrangeTest" time="0"/>
 </testsuite>

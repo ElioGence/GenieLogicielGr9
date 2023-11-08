@@ -23,12 +23,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelPrincipal" alignment="1" max="32767" attributes="0"/>
+          <Component id="PanelPrincipal" alignment="1" pref="858" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelPrincipal" alignment="0" max="32767" attributes="0"/>
+          <Component id="PanelPrincipal" alignment="0" pref="274" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -51,33 +51,48 @@
             <Property name="rows" type="int" value="1"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="jButtonaddPanier">
+            <Component class="javax.swing.JButton" name="jButtonAdd">
               <Properties>
                 <Property name="text" type="java.lang.String" value="+"/>
+                <Property name="name" type="java.lang.String" value="Plus" noResource="true"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonaddPanierActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAddActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButtonPLUS">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="CREATE"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPLUSActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboFruit">
+            <Component class="javax.swing.JComboBox" name="jComboSelectAdd">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
                     <StringItem index="0" value="Selection Fruit"/>
                   </StringArray>
                 </Property>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[150, 22]"/>
+                </Property>
+                <Property name="name" type="java.lang.String" value="SelectAddFruit" noResource="true"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboSelectAddActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButtonCreateFruit">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cr&#xe9;er Fruit"/>
+                <Property name="name" type="java.lang.String" value="CreateFruit" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCreateFruitActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButtonCreatePlat">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cr&#xe9;er Plat"/>
+                <Property name="name" type="java.lang.String" value="CreatePlat" noResource="true"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -107,6 +122,7 @@
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                     <Property name="tabSize" type="int" value="1"/>
+                    <Property name="text" type="java.lang.String" value="Panier de 0 &#xe9;l&#xe9;ment(s) : 0.0 euros"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -125,32 +141,35 @@
             <Property name="rows" type="int" value="1"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="jButtonMinus">
+            <Component class="javax.swing.JButton" name="jButtonRetrait">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
+                <Property name="name" type="java.lang.String" value="Minus" noResource="true"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMinusActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRetraitActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboRetrait">
+            <Component class="javax.swing.JComboBox" name="jComboSelectRetrait">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
                     <StringItem index="0" value="Retrait Fruit"/>
                   </StringArray>
                 </Property>
+                <Property name="name" type="java.lang.String" value="SelectRetraitFruit" noResource="true"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="Boycott">
+            <Component class="javax.swing.JButton" name="jButtonBoycott">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Boycott"/>
+                <Property name="name" type="java.lang.String" value="Boycott" noResource="true"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoycottActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonBoycottActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
