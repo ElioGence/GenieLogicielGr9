@@ -20,12 +20,14 @@ public class TestMVC {
     
     public TestMVC(){
         //vueG = new VueGraphSwing() ;
-        vueG = new VueGraphAWT();
+        vueG = new VueGSwing();
         controlSimple = new Controleur();
         panier = new Panier(10);
         VueConsole vuec = new VueConsole();
 
-        controlSimple.setP(panier);                 
+        controlSimple.setP(panier);   
+        controlSimple.setVg(vueG);
+        
         panier.addObserver(vueG);        
         panier.addObserver(vuec);
         vueG.addControleur(controlSimple);

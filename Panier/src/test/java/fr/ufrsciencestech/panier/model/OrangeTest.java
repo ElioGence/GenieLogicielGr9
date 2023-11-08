@@ -1,139 +1,96 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package fr.ufrsciencestech.panier.model;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import fr.ufrsciencestech.panier.model.fruit.Orange;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
-import fr.ufrsciencestech.panier.model.fruit.Orange;
-
-import static org.junit.Assert.*;
-
-/**
- *
- * @author eg425368
- */
 public class OrangeTest {
-    
-    public OrangeTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of getPrix method, of class Orange.
-     */
     @Test
-    public void testGetPrix() {
-        System.out.println("getPrix");
-        Orange instance = new Orange();
-        double expResult = 0.0;
-        double result = instance.getPrix();
-        assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testPrixOrigine() {
+        Orange orange = new Orange(0.8, "France");
+        double nb = 0.8;
+        assertEquals(nb, orange.getPrix(),0.0001);
+        assertEquals("France", orange.getOrigine());
     }
 
-    /**
-     * Test of setPrix method, of class Orange.
-     */
+    @Test
+    public void testPrixOrigineParDéfaut() {
+        Orange orange = new Orange();
+        double nb = 0.5;
+        assertEquals(nb, orange.getPrix(),0.0001);
+        assertEquals("France", orange.getOrigine());
+    }
+
     @Test
     public void testSetPrix() {
-        System.out.println("setPrix");
-        double prix = 0.0;
-        Orange instance = new Orange();
-        instance.setPrix(prix);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Orange orange = new Orange();
+        orange.setPrix(0.6);
+        assertEquals(0.6, orange.getPrix(),0.0001);
+        orange.setPrix(-0.6); // Le prix ne doit pas être négatif
+        assertEquals(0.6, orange.getPrix(),0.0001);
     }
 
-    /**
-     * Test of getOrigine method, of class Orange.
-     */
-    @Test
-    public void testGetOrigine() {
-        System.out.println("getOrigine");
-        Orange instance = new Orange();
-        String expResult = "";
-        String result = instance.getOrigine();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setOrigine method, of class Orange.
-     */
     @Test
     public void testSetOrigine() {
-        System.out.println("setOrigine");
-        String origine = "";
-        Orange instance = new Orange();
-        instance.setOrigine(origine);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Orange orange = new Orange();
+        orange.setOrigine("Espagne");
+        assertEquals("Espagne", orange.getOrigine());
+        orange.setOrigine("");
+        assertEquals("Espagne", orange.getOrigine()); // Origine par défaut
     }
 
-    /**
-     * Test of toString method, of class Orange.
-     */
     @Test
     public void testToString() {
-        System.out.println("toString");
-        Orange instance = new Orange();
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Orange orange = new Orange(0.5, "France");
+        assertEquals("0.5€ d'orange (France)", orange.toString());
     }
 
-    /**
-     * Test of equals method, of class Orange.
-     */
     @Test
     public void testEquals() {
-        System.out.println("equals");
-        Object o = null;
-        Orange instance = new Orange();
-        boolean expResult = false;
-        boolean result = instance.equals(o);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Orange orange1 = new Orange(0.5, "France");
+        Orange orange2 = new Orange(0.5, "France");
+        Orange orange3 = new Orange(0.6, "Espagne");
+        Orange autreObjet = new Orange(0.5, "France");
+
+        assertTrue(orange1.equals(orange2));
+        assertFalse(orange1.equals(orange3));
+        assertTrue(orange1.equals(autreObjet));
     }
 
-    /**
-     * Test of isSeedless method, of class Orange.
-     */
     @Test
     public void testIsSeedless() {
-        System.out.println("isSeedless");
-        Orange instance = new Orange();
-        boolean expResult = false;
-        boolean result = instance.isSeedless();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Orange orange = new Orange();
+        assertFalse(orange.isSeedless());
     }
-    
+
+    @Test
+    public void testName() {
+        Orange orange = new Orange();
+        assertEquals("Orange", orange.getName());
+    }
+
+    @Test
+    public void testSetPrixNegative() {
+        Orange orange = new Orange();
+        orange.setPrix(-0.6);
+        double nb = 0.6;
+        assertEquals(nb, orange.getPrix(),0.0001);
+    }
+
+    @Test
+    public void testSetOrigineEmpty() {
+        Orange orange = new Orange();
+        orange.setOrigine("");
+        assertEquals("Espagne", orange.getOrigine());
+    }
+
+    @Test
+    public void testSetOrigineNull() {
+        Orange orange = new Orange();
+        orange.setOrigine("");
+        assertEquals("Espagne", orange.getOrigine());
+    }
+
 }

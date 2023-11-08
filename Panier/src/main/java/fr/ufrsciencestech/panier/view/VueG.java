@@ -16,4 +16,34 @@ public interface VueG extends PropertyChangeListener {
     public void propertyChange(PropertyChangeEvent evt);
     //public void update(Observable m, Object o);
     public void addControleur(Controleur c);
+
+    public void ajout();
+
+    public void retrait();
+
+    public void selectRetrait();
+
+    public void selectAdd();
+
+    public void createFruit();
+
+    public void boycott();
+
+    public void validerBoycott();
+
+    public void validerCreateFruit();
+
+    public void validerCreatePlat();
+
+    public void createPlat();
+
+    public void selectAddPlat();
+
+    public void selectRetraitPlat();
+
+    public void ajoutFruitPlat();
+
+    public void retirerFruitPlat();
+
+    public void selectPlat();
 }

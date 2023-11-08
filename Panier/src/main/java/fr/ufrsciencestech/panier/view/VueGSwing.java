@@ -5,33 +5,55 @@
 package fr.ufrsciencestech.panier.view;
 import fr.ufrsciencestech.panier.controler.Controleur;
 import fr.ufrsciencestech.panier.model.ElementPanier;
-import fr.ufrsciencestech.panier.model.ElementPANIER;
+import fr.ufrsciencestech.panier.model.FabriqueFruit;
 import fr.ufrsciencestech.panier.model.Panier;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeEvent;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JTextArea;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.ArrayList;
 /**
  *
  * @author im796713
  */
 public class VueGSwing extends javax.swing.JFrame implements VueG{
-private JFrame frame;
-Panier panier=new Panier(100);
-int a=1;
-int compteurPanier = 0;
-double compteurPrix = 0;
+    
+    private Panier panier=new Panier(100);
+    private JFrame frame;
+    
+    private String platTemp="";
+    private int numSelectAddFruitPlat = 0;
+    private int numSelectRetraitFruitPlat = 0;
+    
+    private int numSelectAddFruit = 0;
+    private int numSelectRetraitFruit = 0;
+    private int numSelectPlat = 0;
+    
+    private JButton jButtonValiderBoycott = new JButton("Valider");
+    private JButton jButtonValiderCreateFruit = new JButton("Valider");
+    private JButton jButtonValiderCreatePlat = new JButton("Valider");
+    private JButton jButtonValiderAjoutPlat = new JButton("Valider");
+    
+    private ArrayList<JTextField> listeParamBoycott = new ArrayList<>();
+    private ArrayList<JTextField> listeParamCreateFruit = new ArrayList<>();
+    private ArrayList<JTextField> listeParamCreatePlat = new ArrayList<>();
+    
+    private JButton jBoutonAjouterFruitPlat = new JButton("Ajouter Fruit");
+    private JButton jBoutonRetirerFruitPlat = new JButton("Retirer Fruit");
+    private JComboBox jComboSelectPlat = new JComboBox();
+    private JComboBox jComboSelectAddPlat = new JComboBox();
+    private JComboBox jComboSelectRetraitPlat = new JComboBox();
+    
+    private ArrayList<ElementPanier> listeAdd = new ArrayList<>();
+    private ArrayList<ElementPanier> listeAddFruitPlat = new ArrayList<>();
+    private ArrayList<String> listePlatPossible = new ArrayList<>();
+    
+    private JTextArea textAreaPlat = new JTextArea();
+    
+    private FabriqueFruit fabrique = new FabriqueFruit();
 
-
-    /**
-     * Creates new form VUEGswing
-     */
     public VueGSwing() {
         initComponents();
         this.addWindowListener(new WindowAdapter(){
@@ -54,16 +76,17 @@ double compteurPrix = 0;
 
         PanelPrincipal = new javax.swing.JPanel();
         PanelHaut = new javax.swing.JPanel();
-        jButtonaddPanier = new javax.swing.JButton();
-        jButtonPLUS = new javax.swing.JButton();
-        jComboFruit = new javax.swing.JComboBox<>();
+        jButtonAdd = new javax.swing.JButton();
+        jComboSelectAdd = new javax.swing.JComboBox<>();
+        jButtonCreateFruit = new javax.swing.JButton();
+        jButtonCreatePlat = new javax.swing.JButton();
         PanelMilieu = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextInfos = new javax.swing.JTextArea();
         PanelBas = new javax.swing.JPanel();
-        jButtonMinus = new javax.swing.JButton();
-        jComboRetrait = new javax.swing.JComboBox<>();
-        Boycott = new javax.swing.JButton();
+        jButtonRetrait = new javax.swing.JButton();
+        jComboSelectRetrait = new javax.swing.JComboBox<>();
+        jButtonBoycott = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,24 +94,37 @@ double compteurPrix = 0;
 
         PanelHaut.setLayout(new java.awt.GridLayout(1, 3));
 
-        jButtonaddPanier.setText("+");
-        jButtonaddPanier.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAdd.setText("+");
+        jButtonAdd.setName("Plus"); // NOI18N
+        jButtonAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonaddPanierActionPerformed(evt);
+                jButtonAddActionPerformed(evt);
             }
         });
-        PanelHaut.add(jButtonaddPanier);
+        PanelHaut.add(jButtonAdd);
 
-        jButtonPLUS.setText("CREATE");
-        jButtonPLUS.addActionListener(new java.awt.event.ActionListener() {
+        jComboSelectAdd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selection Fruit" }));
+        jComboSelectAdd.setMinimumSize(new java.awt.Dimension(150, 22));
+        jComboSelectAdd.setName("SelectAddFruit"); // NOI18N
+        jComboSelectAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPLUSActionPerformed(evt);
+                jComboSelectAddActionPerformed(evt);
             }
         });
-        PanelHaut.add(jButtonPLUS);
+        PanelHaut.add(jComboSelectAdd);
 
-        jComboFruit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selection Fruit" }));
-        PanelHaut.add(jComboFruit);
+        jButtonCreateFruit.setText("Créer Fruit");
+        jButtonCreateFruit.setName("CreateFruit"); // NOI18N
+        jButtonCreateFruit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCreateFruitActionPerformed(evt);
+            }
+        });
+        PanelHaut.add(jButtonCreateFruit);
+
+        jButtonCreatePlat.setText("Créer Plat");
+        jButtonCreatePlat.setName("CreatePlat"); // NOI18N
+        PanelHaut.add(jButtonCreatePlat);
 
         PanelPrincipal.add(PanelHaut, java.awt.BorderLayout.NORTH);
 
@@ -97,6 +133,7 @@ double compteurPrix = 0;
         jTextInfos.setColumns(20);
         jTextInfos.setRows(5);
         jTextInfos.setTabSize(1);
+        jTextInfos.setText("Panier de 0 élément(s) : 0.0 euros");
         jScrollPane1.setViewportView(jTextInfos);
 
         PanelMilieu.add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -105,24 +142,27 @@ double compteurPrix = 0;
 
         PanelBas.setLayout(new java.awt.GridLayout(1, 3));
 
-        jButtonMinus.setText("-");
-        jButtonMinus.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRetrait.setText("-");
+        jButtonRetrait.setName("Minus"); // NOI18N
+        jButtonRetrait.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMinusActionPerformed(evt);
+                jButtonRetraitActionPerformed(evt);
             }
         });
-        PanelBas.add(jButtonMinus);
+        PanelBas.add(jButtonRetrait);
 
-        jComboRetrait.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Retrait Fruit" }));
-        PanelBas.add(jComboRetrait);
+        jComboSelectRetrait.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Retrait Fruit" }));
+        jComboSelectRetrait.setName("SelectRetraitFruit"); // NOI18N
+        PanelBas.add(jComboSelectRetrait);
 
-        Boycott.setText("Boycott");
-        Boycott.addActionListener(new java.awt.event.ActionListener() {
+        jButtonBoycott.setText("Boycott");
+        jButtonBoycott.setName("Boycott"); // NOI18N
+        jButtonBoycott.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BoycottActionPerformed(evt);
+                jButtonBoycottActionPerformed(evt);
             }
         });
-        PanelBas.add(Boycott);
+        PanelBas.add(jButtonBoycott);
 
         PanelPrincipal.add(PanelBas, java.awt.BorderLayout.SOUTH);
 
@@ -130,188 +170,35 @@ double compteurPrix = 0;
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonaddPanierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonaddPanierActionPerformed
+    private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
         // TODO add your handling code here:
-       
-        // Récupére l'élément sélectionné dans la JComboBox
-    String selectedElement = (String) jComboFruit.getSelectedItem();
-    // Recherche l'élément correspondant dans la liste "element" 
-    ElementPANIER selectedPANIER = null;
-    for (ElementPANIER element : panier.elements) {
-        if (element.getNom().equals(selectedElement)) {
-            selectedPANIER = element;
-            break;
-        }
-    }
-    
-  
-    // Vérifie si l'élément a été trouvé
-    if (selectedPANIER != null) {
-        // Ajoute l'élément à la jComboBox jComboRetrait
-        jComboRetrait.addItem(selectedElement);
-        compteurPanier ++ ;
-        compteurPrix= compteurPrix + selectedPANIER.getPrix();
-        // Affiche les détails de l'élément dans le jTextArea
-       jTextInfos.setText( "Panier de "+ compteurPanier +" fruits :  "+  compteurPrix+" euros\n");
-       String message = a + " " + selectedPANIER.getNom() + " de " + selectedPANIER.getOrigine() + " à " + selectedPANIER.getPrix() + " euros\n";
-        jTextInfos.append(message);
+    }//GEN-LAST:event_jButtonAddActionPerformed
 
-       //2eme methode non fonctionnel car les infos fruits ne s'ajoutent pas l'une apres l'autre dans le textarea
-        /*
-        jTextInfos.setText( "Panier de "+ compteurPanier +" fruits :  "+  compteurPrix+" euros\n");
-        //newText.append("Panier de ").append(compteurPanier).append(" fruits : ").append(compteurPrix).append(" euros\n");
-        newText.append(a).append(" ").append(selectedPANIER.getNom()).append(" de ").append(selectedPANIER.getOrigine()).append(" à ").append(selectedPANIER.getPrix()).append(" euros\n");
-        // Définissez le texte mis à jour dans le JTextArea
-        jTextInfos.setText(newText.toString());*/
-    } else {
-        // Gére le cas où l'élément n'a pas été trouvé
-        jTextInfos.setText("Élément non trouvé.");
-    }
-    }//GEN-LAST:event_jButtonaddPanierActionPerformed
+    private void jButtonCreateFruitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreateFruitActionPerformed
+        // TODO add your handling code here:  
+    }//GEN-LAST:event_jButtonCreateFruitActionPerformed
 
-    private void jButtonPLUSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPLUSActionPerformed
+    private void jButtonBoycottActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBoycottActionPerformed
         // TODO add your handling code here:
-        // Création de la fenêtre
-     frame = new JFrame("Nouveau Fruit");
-    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Fermer uniquement la fenêtre actuelle
-    frame.setSize(300, 150);
+    }//GEN-LAST:event_jButtonBoycottActionPerformed
 
-    // Création des composants
-    JLabel labelNom = new JLabel("Nom:");
-    final JTextField textFieldNom = new JTextField(20);
-
-    JLabel labelNationalite = new JLabel("Nationalité:");
-    final JTextField textFieldNationalite = new JTextField(20);
-
-    JLabel labelPrix = new JLabel("Prix:");
-    final JTextField textFieldPrix = new JTextField(20);
-
-    JButton buttonValider = new JButton("Valider");
-
-    // Ajout des composants à la fenêtre
-    JPanel panel = new JPanel();
-    panel.setLayout(new GridLayout(4, 2));
-    panel.add(labelNom);
-    panel.add(textFieldNom);
-    panel.add(labelNationalite);
-    panel.add(textFieldNationalite);
-    panel.add(labelPrix);
-    panel.add(textFieldPrix);
-    panel.add(buttonValider);
-
-    frame.add(panel);
-
-
-    buttonValider.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String nom = textFieldNom.getText();
-            String origine = textFieldNationalite.getText();
-            String valeur = textFieldPrix.getText();
-            double prix = Double.parseDouble(valeur);
-            ElementPANIER nouvelElement = new ElementPANIER(nom,origine,prix);
-           
-            panier.elements.add(nouvelElement);
-           
-            jComboFruit.addItem(nom);
-            frame.dispose();
-        }
-    });
-
-
-    frame.setVisible(true);
-    }//GEN-LAST:event_jButtonPLUSActionPerformed
-
-    private void BoycottActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoycottActionPerformed
+    private void jButtonRetraitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRetraitActionPerformed
         // TODO add your handling code here:
-  
-     frame = new JFrame("Boycott");
-    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    frame.setSize(300, 150);
-   
-  
-    JLabel labelNationalite = new JLabel("Nationalité:");
-    final JTextField textFieldNationalite = new JTextField(20);
+    }//GEN-LAST:event_jButtonRetraitActionPerformed
 
-    JLabel labelFruit = new JLabel("Fruit:");
-    final JTextField textFieldFruit = new JTextField(20);
-   
-    JLabel labelPrix = new JLabel("Prix:");
-    final JTextField textFieldPrix = new JTextField(20);
-
-    JButton buttonValider = new JButton("Valider");
-
-  
-    JPanel panel = new JPanel();
-    panel.setLayout(new GridLayout(4, 2));
-    panel.add(labelNationalite);
-    panel.add(textFieldNationalite);
-    panel.add(labelFruit);
-    panel.add(textFieldFruit);
-    panel.add(labelPrix);
-    panel.add(textFieldPrix);
-    panel.add(buttonValider);
-
-    frame.add(panel);
-
-  
-    buttonValider.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String nationalite = textFieldNationalite.getText();
-            //panier.boycotteOrigine(nationalite);
-            String fruit = textFieldFruit.getText();
-            String prix = textFieldPrix.getText();
-           
-        }
-    });
-
-
-    frame.setVisible(true);
-    }//GEN-LAST:event_BoycottActionPerformed
-
-    private void jButtonMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMinusActionPerformed
+    private void jComboSelectAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboSelectAddActionPerformed
         // TODO add your handling code here:
-        // Récupére l'élément sélectionné dans la JComboBox jComboRetrait
-    String selectedElement = (String) jComboRetrait.getSelectedItem();
-// Obtient le texte complet du JTextArea
-    String text = jTextInfos.getText();
-    // Supprime l'élément sélectionné de la jComboBox jComboRetrait
-    jComboRetrait.removeItem(selectedElement);
-
-    
-    ElementPANIER selectedPANIER = null;
-    for (ElementPANIER element : panier.elements) {
-        if (element.getNom().equals(selectedElement)) {
-            selectedPANIER = element;
-            break;
-        }
-    }
-
-  
-    if (selectedPANIER != null) {
-        // Décrémente le compteurPanier et déduit le montant du compteurPrix
-        compteurPanier--;
-        compteurPrix -= selectedPANIER.getPrix();
-
-        // Met à jour le texte du compteur
-        jTextInfos.setText("Panier de " + compteurPanier + " fruits : " + compteurPrix + " euros\n");
-    }
-    else {
-     
-        jTextInfos.setText("Élément non trouvé.");
-    }
-    }//GEN-LAST:event_jButtonMinusActionPerformed
+    }//GEN-LAST:event_jComboSelectAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -349,78 +236,371 @@ double compteurPrix = 0;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Boycott;
     private javax.swing.JPanel PanelBas;
     private javax.swing.JPanel PanelHaut;
     private javax.swing.JPanel PanelMilieu;
     private javax.swing.JPanel PanelPrincipal;
-    private javax.swing.JButton jButtonMinus;
-    private javax.swing.JButton jButtonPLUS;
-    private javax.swing.JButton jButtonaddPanier;
-    private javax.swing.JComboBox<String> jComboFruit;
-    private javax.swing.JComboBox<String> jComboRetrait;
+    private javax.swing.JButton jButtonAdd;
+    private javax.swing.JButton jButtonBoycott;
+    private javax.swing.JButton jButtonCreateFruit;
+    private javax.swing.JButton jButtonCreatePlat;
+    private javax.swing.JButton jButtonRetrait;
+    private javax.swing.JComboBox<String> jComboSelectAdd;
+    private javax.swing.JComboBox<String> jComboSelectRetrait;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextInfos;
     // End of variables declaration//GEN-END:variables
-public JButton getInc() {
-        return jButtonPLUS;
-    }
-   
-    /**
-     * @return the dec
-     */
-    public JButton getDec() {
-        return jButtonMinus;
-    }
-    /**
-     * @param inc the inc to set
-     */
-    public void setInc(JButton inc) {
-        this.jButtonPLUS = inc;
-    }
 
-    /**
-     * @param dec the dec to set
-     */
-    public void setDec(JButton dec) {
-        this.jButtonMinus = dec;
-    }
-    /**
-     * @return the affiche
-     */
-    public JTextArea getAffiche() {
-        return jTextInfos;
-    }
-
-    /**
-     * @param affiche the affiche to set
-     */
-    public void setAffiche(JTextArea affiche) {
-        this.jTextInfos = affiche;
+    
+    
+    public void updateAffichage() {
+        jComboSelectAdd.removeAllItems();
+        if (!listeAdd.isEmpty()){
+            for (ElementPanier p : listeAdd)
+                jComboSelectAdd.addItem(p.toString());
+        }
+        jComboSelectRetrait.removeAllItems();
+        if (!panier.getelements().isEmpty()){
+            for (ElementPanier p : panier.getelements())
+                jComboSelectRetrait.addItem(p.toString());
+        }
+        jTextInfos.setText(panier.toString());
     }
    
-    public JComboBox getAfficheListe() {
-        return jComboFruit;
-    }
-    public void setAfficheListe(JComboBox listes) {
-        this.jComboFruit = listes;
-    }
-   
-    public JComboBox getAfficheListeRetrait() {
-        return jComboRetrait;
-    }
-    public void setAfficheListeRetrait(JComboBox listesretrait) {
-        this.jComboRetrait = listesretrait;
-    }
-   
-   
+    @Override
     public void propertyChange(PropertyChangeEvent evt){
         Panier p = (Panier) evt.getSource();
-        getAffiche().setText(((Integer)p.getTaillePanier()).toString());
+        jTextInfos.setText(((Integer)p.getTaillePanier()).toString());
     }
 
+    @Override
     public void addControleur(Controleur c) {
-        getInc().addActionListener(c);
-        getDec().addActionListener(c);
+        this.jButtonAdd.addActionListener(c);
+        this.jButtonRetrait.addActionListener(c);
+        this.jComboSelectAdd.addActionListener(c);
+        this.jComboSelectRetrait.addActionListener(c);
+        this.jButtonBoycott.addActionListener(c);
+        this.jButtonCreateFruit.addActionListener(c);
+        this.jButtonCreatePlat.addActionListener(c);
+        this.jButtonValiderBoycott.addActionListener(c);
+        this.jButtonValiderCreateFruit.addActionListener(c);
+        this.jButtonValiderCreatePlat.addActionListener(c);
+        this.jComboSelectPlat.addActionListener(c);
+        this.jComboSelectAddPlat.addActionListener(c);
+        this.jComboSelectRetraitPlat.addActionListener(c);
+        this.jBoutonRetirerFruitPlat.addActionListener(c);
+        this.jBoutonAjouterFruitPlat.addActionListener(c);
+        this.jButtonValiderAjoutPlat.addActionListener(c);
     }
+
+    @Override
+    public void ajout() {
+        this.panier.ajout(this.listeAdd.get(numSelectAddFruit));
+        updateAffichage();
+    }
+
+    @Override
+    public void retrait() {
+        this.panier.retrait(numSelectRetraitFruit);
+        updateAffichage();
+    }
+
+    @Override
+    public void selectRetrait() {
+        this.numSelectRetraitFruit=this.jComboSelectRetrait.getSelectedIndex();
+    }
+
+    @Override
+    public void selectAdd() {
+        this.numSelectAddFruit=this.jComboSelectAdd.getSelectedIndex();
+    }
+
+    public void initFrameCreateFruit(){
+        // Création de la fenêtre
+        frame = new JFrame("Nouveau Fruit");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Fermer uniquement la fenêtre actuelle
+        frame.setSize(300, 150);
+
+        // Création des composants
+        JLabel labelNom = new JLabel("Nom:");
+        final JTextField textFieldNom = new JTextField(20);
+
+        JLabel labelNationalite = new JLabel("Nationalité:");
+        final JTextField textFieldNationalite = new JTextField(20);
+
+        JLabel labelPrix = new JLabel("Prix:");
+        final JTextField textFieldPrix = new JTextField(20);
+
+        
+        listeParamCreateFruit.add(textFieldNom);
+        listeParamCreateFruit.add(textFieldNationalite);
+        listeParamCreateFruit.add(textFieldPrix);
+        
+        jButtonValiderCreateFruit.setName("ValiderCreateFruit");
+
+        // Ajout des composants à la fenêtre
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(4, 2));
+        panel.add(labelNom);
+        panel.add(textFieldNom);
+        panel.add(labelNationalite);
+        panel.add(textFieldNationalite);
+        panel.add(labelPrix);
+        panel.add(textFieldPrix);
+        panel.add(jButtonValiderCreateFruit);
+
+        frame.add(panel);
+
+        frame.setVisible(true);
+    }
+    
+    @Override
+    public void createFruit() {
+        this.listeParamCreateFruit.clear();
+        this.initFrameCreateFruit();
+        this.updateAffichage();
+    }
+    
+    @Override
+    public void validerCreateFruit() {
+        String nom = listeParamCreateFruit.get(0).getText();
+        String origine = listeParamCreateFruit.get(1).getText();
+        String valeur = listeParamCreateFruit.get(2).getText();
+              
+        double prix = 1;
+        
+        try{
+            prix = Double.parseDouble(valeur);
+        } catch (NumberFormatException e) {
+            
+        }
+               
+        ElementPanier nouvelElement = fabrique.createFruit(nom,prix,origine);
+
+        if (nouvelElement!=null) 
+            listeAdd.add(nouvelElement);
+
+        frame.dispose();
+        this.updateAffichage();
+    }
+
+    public void initFrameBoycott(){
+        frame = new JFrame("Boycott");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(300, 150);
+
+        JLabel labelNom = new JLabel("Fruit:");
+        final JTextField textFieldNom = new JTextField(20);
+
+        JLabel labelNationalite = new JLabel("Nationalité:");
+        final JTextField textFieldNationalite = new JTextField(20);
+        
+        JLabel labelPrix = new JLabel("Prix:");
+        final JTextField textFieldPrix = new JTextField(20);
+
+        listeParamBoycott.add(textFieldNom);
+        listeParamBoycott.add(textFieldNationalite);
+        listeParamBoycott.add(textFieldPrix);
+        
+        jButtonValiderBoycott.setName("ValiderBoycott");
+
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(4, 2));
+        panel.add(labelNom);
+        panel.add(textFieldNom);
+        panel.add(labelNationalite);
+        panel.add(textFieldNationalite);
+        panel.add(labelPrix);
+        panel.add(textFieldPrix);
+        panel.add(jButtonValiderBoycott);
+
+        frame.add(panel);
+
+        frame.setVisible(true);
+    }
+    
+    @Override
+    public void boycott() {
+        this.listeParamBoycott.clear();
+        this.initFrameBoycott();
+        this.updateAffichage();
+    }
+
+    @Override
+    public void validerBoycott() {
+        String nom = listeParamBoycott.get(0).getText();
+        String origine = listeParamBoycott.get(1).getText();
+        String valeur = listeParamBoycott.get(2).getText();
+        
+        double prix = 100000000;
+        
+        try{
+            prix = Double.parseDouble(valeur);
+        } catch (NumberFormatException e) {
+            
+        }
+        
+        if (!nom.equals("")){
+            if (!origine.equals("")){
+                if (prix!=100000000){
+                    this.panier.boycotteNamePrixOrigine(nom, prix, origine);
+                } else {
+                    this.panier.boycotteNameOrigine(nom, origine);
+                }
+            } else {
+                if (prix!=100000000){
+                    this.panier.boycotteNamePrix(nom, prix);
+                } else {
+                    this.panier.boycotteName(nom);
+                }
+            } 
+        } else {
+            if (!origine.equals("")){
+                if (prix!=100000000){
+                    this.panier.boycottePrixOrigine(prix, origine);
+                } else {
+                    this.panier.boycotteOrigine(origine);
+                }
+            } else {
+                if (prix!=100000000){
+                    this.panier.boycottePrix(prix);
+                } else {
+                    //Do nothing (aucun paramêtre)
+                }
+            } 
+        }
+        
+        frame.dispose();
+        this.updateAffichage();
+    }
+
+    public void initFrameCreatePlat(){
+        frame = new JFrame("Nouveau Plat");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Fermer uniquement la fenêtre actuelle
+        frame.setSize(500, 200);
+
+        // Créer le label "Sélectionner un plat:"
+        JLabel labelPlat = new JLabel("Sélectionner un plat:");
+        // Créer une JComboBox pour les plats
+        jComboSelectPlat.setName("SelectPlat");
+        listePlatPossible.clear();
+        jComboSelectPlat.removeAllItems();
+        
+        jComboSelectPlat.addItem("Jus");
+        listePlatPossible.add("Jus");
+        jComboSelectPlat.addItem("Salade");
+        listePlatPossible.add("Salade");
+
+        textAreaPlat = new JTextArea(5, 60);
+
+        jComboSelectAddPlat.removeAllItems();
+        jComboSelectAddPlat.setName("SelectAddPlat");
+        for(ElementPanier p : listeAdd)
+            if (p.getName()!="Jus"&&p.getName()!="Salade")
+                jComboSelectAddPlat.addItem(p.toString());
+        
+        jComboSelectRetraitPlat.removeAllItems();
+        jComboSelectRetraitPlat.setName("SelectRetraitPlat");
+        
+        jBoutonAjouterFruitPlat.setName("AjouterFruitPlat");
+        jBoutonRetirerFruitPlat.setName("RetirerFruitPlat");
+        jButtonValiderAjoutPlat.setName("ValiderCreatePlat");
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(5, 1));
+        JPanel panel1 = new JPanel();
+        panel1.setLayout(new GridLayout(1, 2)); 
+        JPanel panel2 = new JPanel();
+        panel2.setLayout(new GridLayout(1, 2)); 
+        JPanel panel3 = new JPanel();
+        JPanel panel4 = new JPanel();
+        panel4.setLayout(new GridLayout(1, 2)); 
+        JPanel panel5 = new JPanel();
+        // Ajouter les composants au panneau
+        panel1.add(labelPlat);
+        panel1.add(jComboSelectPlat);
+        panel2.add(jBoutonAjouterFruitPlat);
+        panel2.add(jComboSelectAddPlat);
+        panel3.add(textAreaPlat);
+        panel4.add(jBoutonRetirerFruitPlat);
+        panel4.add(jComboSelectRetraitPlat);
+        panel5.add(jButtonValiderAjoutPlat);
+        panel.add(panel1);
+        panel.add(panel2);
+        panel.add(panel3);
+        panel.add(panel4);
+        panel.add(panel5);
+        frame.add(panel);
+
+        frame.pack();
+        frame.setVisible(true);
+    }
+    
+    @Override
+    public void createPlat(){
+        if(!listeAdd.isEmpty()){
+            this.listeParamCreatePlat.clear();
+            this.initFrameCreatePlat();
+            updateAffichagePlat();
+        } else {
+            this.createFruit();
+        }
+    }
+    
+    @Override
+    public void validerCreatePlat() {
+        if(!listePlatPossible.isEmpty()){
+            if (!listeAddFruitPlat.isEmpty()){
+                String nomPlat = listePlatPossible.get(numSelectPlat);
+                ElementPanier newElem = this.fabrique.createPlat(nomPlat, listeAddFruitPlat);
+                this.listeAdd.add(newElem);
+            }
+        }
+        frame.dispose();
+        updateAffichage();
+    }
+
+    @Override
+    public void selectAddPlat() {
+        this.numSelectAddFruitPlat=this.jComboSelectAddPlat.getSelectedIndex();
+    }
+
+    @Override
+    public void selectRetraitPlat() {
+        this.numSelectRetraitFruitPlat=this.jComboSelectRetraitPlat.getSelectedIndex();
+    }
+
+    @Override
+    public void ajoutFruitPlat() {
+        if(!listeAdd.isEmpty())
+            this.listeAddFruitPlat.add(listeAdd.get(numSelectAddFruitPlat));
+        this.updateAffichagePlat();
+    }
+
+    @Override
+    public void retirerFruitPlat() {
+        if(!listeAddFruitPlat.isEmpty())
+            this.listeAddFruitPlat.remove(this.numSelectRetraitFruitPlat);
+        this.updateAffichagePlat();
+    }
+
+    @Override
+    public void selectPlat() {
+        this.numSelectPlat=this.jComboSelectPlat.getSelectedIndex();
+        this.updateAffichagePlat();
+    }
+    
+    public void updateAffichagePlat(){
+        String res = "";
+        String newLine = System.getProperty("line.separator");
+        if(!listePlatPossible.isEmpty())
+            res += listePlatPossible.get(numSelectPlat)+newLine;
+        if(!listeAddFruitPlat.isEmpty()) for (ElementPanier p : listeAddFruitPlat) 
+            res += p.toString() + newLine;
+        this.textAreaPlat.setText(res);
+        for(ElementPanier p : listeAddFruitPlat)
+            jComboSelectRetraitPlat.addItem(p.toString());
+    }
+
 }
